@@ -12,10 +12,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+//
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"InterviewAssFlow" bundle:nil];
+//    UIViewController *loginVC = [sb instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//    self.window.rootViewController = loginVC;
+    
     return YES;
 }
 
