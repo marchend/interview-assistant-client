@@ -89,7 +89,8 @@
     if( [wasSuccess boolValue] ){
         [self performSegueWithIdentifier:@"goCases" sender:self];        
     }else{
-        //do something to display error
+//        self.errorLabel.text = (NSString *)[responseDic objectForKey:@"msg"];
+        self.errorLabel.text = [responseDic objectForKey:@"msg"];
     }
     
     

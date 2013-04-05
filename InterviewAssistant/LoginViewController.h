@@ -15,6 +15,7 @@ NSURLConnection *conn;
 
 @property IBOutlet UITextField *username;
 @property IBOutlet UITextField *password;
+@property IBOutlet UILabel *errorLabel;
 
 
 @end

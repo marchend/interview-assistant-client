@@ -37,11 +37,22 @@
                                     <action selector="loginClicked:" destination="2fe-zS-JT3" eventType="touchUpInside" id="SXI-6e-cr7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="o29-w0-jna">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="WVa-Gp-2j7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.91306470788043481" green="0.0" blue="0.021524331938970638" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xeQ-um-Q6Q" firstAttribute="top" secondItem="t8v-NW-QgB" secondAttribute="top" constant="118" id="2To-WL-4wh"/>
+                            <constraint firstItem="o29-w0-jna" firstAttribute="leading" secondItem="t8v-NW-QgB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8kW-sR-BSS"/>
                             <constraint firstAttribute="trailing" secondItem="P3E-ku-bzr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8mE-OI-ARS"/>
+                            <constraint firstAttribute="trailing" secondItem="o29-w0-jna" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OQR-Eh-ojC"/>
+                            <constraint firstItem="o29-w0-jna" firstAttribute="top" secondItem="t8v-NW-QgB" secondAttribute="top" constant="219" id="Tu6-MB-VzT"/>
                             <constraint firstItem="G6t-8A-T7g" firstAttribute="top" secondItem="t8v-NW-QgB" secondAttribute="top" constant="75" id="Xm2-DT-eBh"/>
                             <constraint firstAttribute="trailing" secondItem="xeQ-um-Q6Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zs1-6b-XxD"/>
                             <constraint firstItem="P3E-ku-bzr" firstAttribute="top" secondItem="xeQ-um-Q6Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZxI-7V-KxD"/>
@@ -51,6 +62,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="o29-w0-jna" id="1Jq-So-2Vv"/>
                         <outlet property="password" destination="xeQ-um-Q6Q" id="cAX-d3-cGG"/>
                         <outlet property="username" destination="G6t-8A-T7g" id="jYL-HI-Uq6"/>
                         <segue destination="Cov-Tx-G42" kind="modal" identifier="goCases" modalTransitionStyle="flipHorizontal" id="OAv-9h-izd"/>
@@ -103,6 +115,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="loginClicked:"/>
+                <relationship kind="outlet" name="errorLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="username" candidateClass="UITextField"/>
             </relationships>
@@ -121,9 +134,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
