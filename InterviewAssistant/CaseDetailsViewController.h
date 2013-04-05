@@ -11,9 +11,10 @@
 NSMutableData *responseData;
 NSURLConnection *conn;
 
-@interface CaseDetailsViewController : UIViewController
+@interface CaseDetailsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, NSURLConnectionDelegate>
 
 @property (weak, nonatomic) NSString *caseDetailsURL;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navTitleBar;
+@property (weak, nonatomic) IBOutlet UITableView *caseDetailsTable;
 
 @end

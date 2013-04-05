@@ -12,6 +12,9 @@
 @interface CaseDetailsViewController ()
 {
     NSDictionary *caseDetails;
+    NSArray *arrayOfPhotos;
+    NSArray *arrayOfVideos;
+    NSArray *arrayOfNotes;
 }
 
 @end
@@ -33,6 +36,8 @@
 	// Do any additional setup after loading the view.
     NSLog(@"our case URL is:%@",self.caseDetailsURL);
     [self loadData];
+    [self.caseDetailsTable setDataSource:self];
+    [self.caseDetailsTable setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,12 +87,65 @@
     NSLog(@"we got a responseDic for call to get the cases:%@",responseDic);
     caseDetails = (NSDictionary *)[responseDic objectForKey:@"caseDetails"];
     self.navTitleBar.title = [caseDetails objectForKey:@"name"];
-    
+    arrayOfNotes = (NSArray *)[responseDic objectForKey:@"notes"];
+    arrayOfPhotos = (NSArray *)[responseDic objectForKey:@"photos"];
+    arrayOfVideos = (NSArray *)[responseDic objectForKey:@"videos"];
+    [self.caseDetailsTable reloadData];
 }
 
 
 - (IBAction)doneButtonClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Datasource Delegate Methods
+
+-(NSInteger)numberOfSectionsInTableView:(UICollectionView *)collectionView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(section == 0){
+        return [arrayOfPhotos count];
+    }else if(section == 1){
+        return [arrayOfVideos count];
+    }else{
+        return [arrayOfNotes count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //Where we configure the cell in each row
+    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    // Configure the cell... setting the text of our cell's label
+    cell.textLabel.text = [arrayOfNotes objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    BATTrailsViewController *trailsController = [[BATTrailsViewController alloc] initWithStyle:UITableViewStylePlain];
+//    trailsController.selectedRegion = [regions objectAtIndex:indexPath.row];
+//    [[self navigationController] pushViewController:trailsController animated:YES];
+//    [trailsController release];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([segue.identifier isEqualToString:@"caseDetailsSegue"]) {
+//        NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+//        CaseDetailsViewController *detailsViewController = segue.destinationViewController;
+//        NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+//        NSDictionary *currentCase = (NSDictionary *)[arrayOfCases objectAtIndex:indexPath.row];
+//        detailsViewController.caseDetailsURL = (NSString *)[currentCase objectForKey:@"inteviewsURL"];
+//        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+//    }
 }
 
 @end
