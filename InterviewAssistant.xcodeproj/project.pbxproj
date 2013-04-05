@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2873B4FB170F7DD300BAD9F7 /* CaseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2873B4FA170F7DD300BAD9F7 /* CaseDetailsViewController.m */; };
 		28AFE676170F2E3C00364BA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AFE675170F2E3C00364BA7 /* UIKit.framework */; };
 		28AFE678170F2E3C00364BA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AFE677170F2E3C00364BA7 /* Foundation.framework */; };
 		28AFE67A170F2E3C00364BA7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AFE679170F2E3C00364BA7 /* CoreGraphics.framework */; };
@@ -29,6 +30,9 @@
 		28AFE706170F345B00364BA7 /* case-notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 28AFE700170F345B00364BA7 /* case-notes.png */; };
 		28AFE707170F345B00364BA7 /* new-record.png in Resources */ = {isa = PBXBuildFile; fileRef = 28AFE701170F345B00364BA7 /* new-record.png */; };
 		28AFE708170F345B00364BA7 /* take-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 28AFE702170F345B00364BA7 /* take-picture.png */; };
+		28AFE70D170F54AD00364BA7 /* CasesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AFE70C170F54AD00364BA7 /* CasesCollectionViewController.m */; };
+		28AFE70F170F557900364BA7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AFE70E170F557900364BA7 /* QuartzCore.framework */; };
+		28AFE715170F59A100364BA7 /* CaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AFE714170F59A000364BA7 /* CaseCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2873B4F9170F7DD300BAD9F7 /* CaseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseDetailsViewController.h; sourceTree = "<group>"; };
+		2873B4FA170F7DD300BAD9F7 /* CaseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseDetailsViewController.m; sourceTree = "<group>"; };
 		28AFE672170F2E3C00364BA7 /* InterviewAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AFE675170F2E3C00364BA7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28AFE677170F2E3C00364BA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,6 +76,11 @@
 		28AFE700170F345B00364BA7 /* case-notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "case-notes.png"; sourceTree = "<group>"; };
 		28AFE701170F345B00364BA7 /* new-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new-record.png"; sourceTree = "<group>"; };
 		28AFE702170F345B00364BA7 /* take-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take-picture.png"; sourceTree = "<group>"; };
+		28AFE70B170F54AC00364BA7 /* CasesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasesCollectionViewController.h; sourceTree = "<group>"; };
+		28AFE70C170F54AD00364BA7 /* CasesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasesCollectionViewController.m; sourceTree = "<group>"; };
+		28AFE70E170F557900364BA7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		28AFE713170F59A000364BA7 /* CaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseCell.h; sourceTree = "<group>"; };
+		28AFE714170F59A000364BA7 /* CaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AFE70F170F557900364BA7 /* QuartzCore.framework in Frameworks */,
 				28AFE676170F2E3C00364BA7 /* UIKit.framework in Frameworks */,
 				28AFE678170F2E3C00364BA7 /* Foundation.framework in Frameworks */,
 				28AFE67A170F2E3C00364BA7 /* CoreGraphics.framework in Frameworks */,
@@ -118,6 +130,7 @@
 		28AFE674170F2E3C00364BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28AFE70E170F557900364BA7 /* QuartzCore.framework */,
 				28AFE675170F2E3C00364BA7 /* UIKit.framework */,
 				28AFE677170F2E3C00364BA7 /* Foundation.framework */,
 				28AFE679170F2E3C00364BA7 /* CoreGraphics.framework */,
@@ -129,6 +142,12 @@
 		28AFE67B170F2E3C00364BA7 /* InterviewAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				28AFE713170F59A000364BA7 /* CaseCell.h */,
+				28AFE714170F59A000364BA7 /* CaseCell.m */,
+				28AFE70B170F54AC00364BA7 /* CasesCollectionViewController.h */,
+				28AFE70C170F54AD00364BA7 /* CasesCollectionViewController.m */,
+				2873B4F9170F7DD300BAD9F7 /* CaseDetailsViewController.h */,
+				2873B4FA170F7DD300BAD9F7 /* CaseDetailsViewController.m */,
 				28AFE684170F2E3C00364BA7 /* InterviewAssistantAppDelegate.h */,
 				28AFE685170F2E3C00364BA7 /* InterviewAssistantAppDelegate.m */,
 				28AFE6AF170F2FE800364BA7 /* LoginViewController.h */,
@@ -315,6 +334,9 @@
 				28AFE682170F2E3C00364BA7 /* main.m in Sources */,
 				28AFE686170F2E3C00364BA7 /* InterviewAssistantAppDelegate.m in Sources */,
 				28AFE6B1170F2FE800364BA7 /* LoginViewController.m in Sources */,
+				28AFE70D170F54AD00364BA7 /* CasesCollectionViewController.m in Sources */,
+				28AFE715170F59A100364BA7 /* CaseCell.m in Sources */,
+				2873B4FB170F7DD300BAD9F7 /* CaseDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

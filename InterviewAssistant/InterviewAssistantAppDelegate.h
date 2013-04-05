@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define BASE_URL      @"http://192.168.36.139:3000"
+
 @interface InterviewAssistantAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) NSDictionary *loginCred;
 
 @end

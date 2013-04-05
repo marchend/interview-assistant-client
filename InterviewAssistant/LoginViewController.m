@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "InterviewAssistantAppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -37,17 +38,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-//BUTTON HANDLERS
+#pragma mark - Button Handlers
+
 - (IBAction)loginClicked:(id)sender {
     NSLog(@"loginClicked...");
     //do something here to
     
     NSString *loginCredentials = [NSString stringWithFormat:@"%@:%@",self.username.text,self.password.text];
     
-    
-    NSURL *url = [NSURL URLWithString:@"http://192.168.36.139:3000/login"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/login",BASE_URL]];
     NSMutableURLRequest *loginPost = [NSMutableURLRequest requestWithURL:url];
     NSMutableDictionary *loginDict = [[NSMutableDictionary alloc] init];
+
+    //if login is successful we need this dictionary for future requests
+    InterviewAssistantAppDelegate *del = (InterviewAssistantAppDelegate *)[[UIApplication sharedApplication] delegate];
+    del.loginCred = loginDict;
+    
     [loginDict setValue:loginCredentials forKey:@"authorization"];
     [loginPost setAllHTTPHeaderFields:loginDict];
     [loginPost setHTTPMethod:@"POST"];
@@ -56,7 +62,7 @@
     [conn start];
 }
 
-// NSURLConnection Delegate Methods
+#pragma mark - NSURLConnection Delegate Methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
@@ -87,7 +93,7 @@
     NSNumber *wasSuccess = (NSNumber *)[responseDic objectForKey:@"success"];
     
     if( [wasSuccess boolValue] ){
-        [self performSegueWithIdentifier:@"goCases" sender:self];        
+        [self performSegueWithIdentifier:@"goCases" sender:self];
     }else{
 //        self.errorLabel.text = (NSString *)[responseDic objectForKey:@"msg"];
         self.errorLabel.text = [responseDic objectForKey:@"msg"];
